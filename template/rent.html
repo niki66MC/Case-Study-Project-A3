@@ -134,118 +134,80 @@
             <label for="dob">Date of Birth:</label>
             <input type="date" id="dob" name="dob" required>
         </div>
-
+        <br>
         <div class="form-group">
             <label>Gender:</label>
             <input type="radio" id="male" name="gender" value="Male">
+            <br>
+            <br>
             <label for="male">Male</label>
             <input type="radio" id="female" name="gender" value="Female">
+            <br>
+            <br>
             <label for="female">Female</label>
             <input type="radio" id="preferNotToSay" name="gender" value="Prefer not to say">
+            <br>
+            <br>
             <label for="preferNotToSay">Prefer not to say</label>
             <input type="radio" id="other" name="gender" value="Other">
+            <br>
+            <br>    
             <label for="other">Other:</label>
             <input type="text" id="otherGender" name="otherGender">
         </div>
-
+        <br>
         <div class="form-group">
             <label for="spaceType">Type of Space Desired:</label>
             <select id="spaceType" name="spaceType" required>
                 <option value="Apartment">Classroom</option>
                 <option value="House">Main Class</option>
-                <option value="Office">Main Class+ Stadium "Up to 80" </option>
-                <option value="Garage">Main Class+ Stadium "Up to 120"</option><br>
-
             </select>
-
-             <option value="Other">Other:</option>
-                <input type="text" id="otherSpaceType" name="otherSpaceType">
         </div>
           <div class="form-group">
-            <label for="duration">Preferred workshop duration:</label>
-            <input type="text" id="duration" name="workshopType">
-
+            <label for="duration">How many hours will you need to rent the place for?</label>
+            <input type="text" id="duration" name="workshopType" required>    
+        <br>
+        <br>
         <div class="form-group">
             <label for="timeOfDay">Preferred time of day for the workshop:</label>
-            <select id="timeOfDay" name="timeOfDay">
+            <select id="timeOfDay" name="timeOfDay" required>
                 <option value="morning">Morning</option>
                 <option value="afternoon">Afternoon</option>
                 <option value="evening">Evening</option>
             </select>
         </div>
-
         </div>
         <div class="form-group">
-            <label for="workshopType">What type of workshop are you interested in?</label>
-            <input type="text" id="workshopType" name="workshopType">
-        </div>
-
-        <div class="form-group">
+            <br>
             <label for="moveInDate">Desired WorkShop Date:</label>
             <input type="date" id="moveInDate" name="moveInDate" required>
         </div>
-
+        <br>
          <div class="form-group">
-            <label for="equipment">What type of equipment or facilities do you need?</label>
+            <label for="equipment">Will you need any special equipment?</label>
             <input type="text" id="equipment" name="equipment">
         </div>
 
-
+        <br>
         <div class="form-group">
-            <label for="numOccupants">Number of Participant:</label>
+            <label for="numOccupants">Number of Participants:</label>
             <input type="text" id="numOccupants" name="numOccupants" required>
-        </div>
-
+        </div>       
+        <br>
         <div class="form-group">
-            <label>Current Employment Status:</label>
-            <input type="radio" id="employed" name="employmentStatus" value="Employed">            <label for="employed">Employed</label>
-            <input type="radio" id="selfEmployed" name="employmentStatus" value="Self-Employed"><label for="selfEmployed">Self-Employed</label>
-            <input type="radio" id="student" name="employmentStatus" value="Student"><label for="student">Student</label>
-            <input type="radio" id="unemployed" name="employmentStatus" value="Unemployed"><label for="unemployed">Unemployed</label>
-            <input type="radio" id="retired" name="employmentStatus" value="Retired"><label for="retired">Retired</label>
-             <input type="radio" id="otherEmployment" name="employmentStatus" value="Other">
-<label for="otherEmployment">Other:</label>
-            <input type="text" id="otherEmploymentStatus" name="otherEmploymentStatus">
-
+            <label for="comments">Any other comments?</label>
+            <textarea id="comments" name="comments" style = "resize: none;"></textarea>
         </div>
-                   
-
-        <div class="form-group">
-            <label for="jobTitle">Workshop Title:</label>
-            <input type="text" id="jobTitle" name="jobTitle">
-        </div>
-
-    
-
-        <div class="form-group">
-            <label for="personalReference">Personal Reference (Name and Contact Information):</label>
-            <input type="text" id="personalReference" name="personalReference">
-        </div>
-
-        <div class="form-group">
-            <label for="professionalReference">Professional Reference (Name and Contact Information):</label>
-            <input type="text" id="professionalReference" name="professionalReference">
-        </div>
-
-
-        <div class="form-group">
-            <label for="specialRequirements">Do you have any special requirements or accommodations?</label>
-            <textarea id="specialRequirements" name="specialRequirements"></textarea>
-        </div>
-
-
-        <div class="form-group">
-            <label for="comments">Any other comments or questions?</label>
-            <textarea id="comments" name="comments"></textarea>
-        </div>
-
+        <br>
         <div class="form-group">
             <label for="agreement">I certify that the information provided is true and accurate to the best of my knowledge.</label>
             <input type="checkbox" id="agreement" name="agreement" required>
         </div>
-
+        <br>
+        <input type="hidden" name="form_type" value="rent">
         <div class="form-group">
             <button type="submit">Submit Application</button>
+            <a href="/"><button type="button">Go back</button></a>
         </div>
     </form>
 

@@ -811,7 +811,7 @@ h6 {
 }
 
 .page-title .heading {
-  padding: 160px 0 80px 0;
+  padding: 0px 0 0px 0;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
@@ -879,14 +879,14 @@ section,
 .section-title {
   text-align: center;
   padding-bottom: 60px;
-  position: relative;
+  position: relative;  
 }
 
 .section-title h2 {
   font-size: 32px;
   font-weight: 700;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
   position: relative;
 }
 
@@ -2265,6 +2265,8 @@ section,
 --------------------------------------------------------------*/
 .starter-section {
   /* Add your styles here */
+  margin-bottom: 0px;
+  margin-top: 0px;
 }
 
 /*--------------------------------------------------------------

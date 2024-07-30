@@ -9,14 +9,14 @@ app = Flask(__name__, template_folder='template', static_folder='assets')
 app.config['SECRET_KEY'] = 'super-secret-key'
 
 config = {
-  "apiKey": "AIzaSyDf8OnDIHYzz-ycd143ZkcVmD-K9ictuQw",
-  "authDomain": "auth-lab-53325.firebaseapp.com",
-  "projectId": "auth-lab-53325",
-  "storageBucket": "auth-lab-53325.appspot.com",
-  "messagingSenderId": "140295796023",
-  "appId": "1:140295796023:web:11130be94a50c70ef516b2",
-  "measurementId": "G-TM23J59KMQ",
-  "databaseURL":"https://auth-lab-53325-default-rtdb.europe-west1.firebasedatabase.app/"
+  "apiKey": "AIzaSyDY35t9GW869VOw-H2c4jmm2r6P-EHW4s8",
+  "authDomain": "case-study-a3.firebaseapp.com",
+  "databaseURL": "https://case-study-a3-default-rtdb.europe-west1.firebasedatabase.app",
+  "projectId": "case-study-a3",
+  "storageBucket": "case-study-a3.appspot.com",
+  "messagingSenderId": "283372940900",
+  "appId": "1:283372940900:web:51b26eeed79e81f35cb971",
+  "databaseURL": "https://case-study-a3-default-rtdb.europe-west1.firebasedatabase.app/"
 }
 
 firebase = pyrebase.initialize_app(config)
@@ -26,7 +26,63 @@ db =firebase.database()
 
 @app.route('/', methods=['GET', 'POST'])
 def starterpage():
-  return render_template("starterpage.html")
+  if request.method == 'POST':
+    if request.form["form_type"] == "study":
+      form_data = {
+        'fullName': request.form['fullName'],
+        'email': request.form['email'],
+        'phone': request.form['phone'],
+        'dob': request.form['dob'],
+        'gender': request.form['gender'],
+        'otherGender': request.form['otherGender'],
+        'spaceType': request.form['spaceType'],
+        'numOccupants': request.form['numOccupants'],
+        'preferredDates': request.form['preferredDates'],
+        'workshopTopic': request.form['workshopTopic'],
+        'preferredTimes': request.form['preferredTimes'],
+        'skillsToGain': request.form['skillsToGain'],
+        'discoveryMethod': request.form['discoveryMethod'],
+        'additionalComments': request.form['additionalComments']
+    }
+      db.child("Workshops-Requests").update(form_data)
+      return redirect(url_for("starterpage"))
+
+    elif request.form["form_type"] == "rent":
+      form_data = {
+        'fullName': request.form['fullName'],
+        'email': request.form['email'],
+        'phone': request.form['phone'],
+        'dob': request.form['dob'],
+        'gender': request.form['gender'],
+        'otherGender': request.form['otherGender'],
+        'spaceType': request.form['spaceType'],
+        'duration': request.form['duration'],
+        'timeOfDay': request.form['timeOfDay'],
+        'moveInDate': request.form['moveInDate'],
+        'equipment': request.form['equipment'],
+        'numOccupants': request.form['numOccupants'],
+        'comments': request.form['comments']
+      }
+      db.child("Rent-Requests").update(form_data)
+      return redirect(url_for("starterpage"))
+    else:
+      ppl = int(request.form["ppl"])
+      hours = int(request.form["hours"])
+      estimate = 0
+      if ppl < 20:
+        estimate = 5*ppl + (hours - hours%3)*150
+      elif ppl > 20 and ppl < 50:
+        estimate = 5*ppl + (hours - hours%3)*200
+      elif ppl > 50 and ppl < 80:
+        estimate = 5*ppl + (hours - hours%3)*300
+      elif ppl > 80 and ppl < 120:
+        estimate = 5*ppl + (hours - hours%3)*300
+
+      return render_template("starterpage.html",estimate = estimate)
+  else:
+    return render_template("starterpage.html",estimate = 0)
+
+
 
 @app.route('/rent', methods=['GET', 'POST'])
 def rent():
@@ -40,11 +96,16 @@ def study():
 def signup():
   return render_template("signup.html")
 
-@app.route('/submit',methods=['POST','GET'])
+@app.route('/submit',methods=['POST'])
 def submit():
   form_data = request.form.to_dict()
-  print(form_data)
-  return render_template("submit.html")
+  if request.form["form_type"] == "study":
+    db.child("Workshops-Requests").update(form_data)
+    return render_template("submit.html", name = form_data["fullName"])
+
+  elif request.form["form_type"] == "rent":
+    db.child("Rent-Requests").update(form_data)
+    return render_template("submit.html", name = form_data["fullName"])
 
 @app.route('/servicedetails', methods=['GET', 'POST'])
 def servicedetails():
