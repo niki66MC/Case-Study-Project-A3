@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, url_for, redirect, request
 from flask import session as login_session
 import pyrebase
@@ -29,9 +28,29 @@ db =firebase.database()
 def starterpage():
   return render_template("starterpage.html")
 
+@app.route('/rent', methods=['GET', 'POST'])
+def rent():
+  return render_template("rent.html")
+
+@app.route('/study', methods=['GET', 'POST'])
+def study():
+  return render_template("study.html")
+
+@app.route('/signup',methods=['POST','GET'])
+def signup():
+  return render_template("signup.html")
+
+@app.route('/submit',methods=['POST','GET'])
+def submit():
+  form_data = request.form.to_dict()
+  print(form_data)
+  return render_template("submit.html")
+
 @app.route('/servicedetails', methods=['GET', 'POST'])
 def servicedetails():
   return render_template("servicedetails.html")
+
+
 
 
 if __name__ == '__main__':

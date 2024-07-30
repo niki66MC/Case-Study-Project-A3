@@ -51,7 +51,15 @@
   --surface-color: #252525;
   --contrast-color: #ffffff;
 }
+.navmenu a {
+  color: #333; /* Example color */
+  text-decoration: none;
+  padding: 10px 20px;
+}
 
+.navmenu a:hover {
+  color: #007bff; /* Example hover color */
+}
 .accent-background {
   --background-color: #008374;
   --default-color: #ffffff;
@@ -95,7 +103,23 @@ h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
 }
+.mb-0 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .large-button {
+            padding: 60px 200px;
+            font-size: 40px;
+            border-radius: 50px;
+            border: 2px solid black;
+            background-color: darkred;
+            margin: 0 10px;
+            cursor: pointer; 
 
+        }
 /* Pulsating Play Button
 ------------------------------*/
 .pulsating-play-btn {

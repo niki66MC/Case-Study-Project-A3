@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Application Form</title>
+    <style>
+         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: linear-gradient(to right, #ffffff, #f9f9f9);
+        }
+        h1, h2, h3 {
+            color: #0044cc; /* Blue color for headings */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        form {
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        .form-group input[type="text"], 
+        .form-group input[type="email"], 
+        .form-group input[type="tel"], 
+        .form-group input[type="date"], 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .form-group input[type="radio"], 
+        .form-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .form-group button {
+            padding: 12px 25px;
+            background-color: #cc0000; /* Red color for buttons */
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .form-group button:hover {
+            background-color: #990000; /* Darker red for hover effect */
+            transform: scale(1.05);
+        }
+        .form-group button:active {
+            background-color: #660000; /* Even darker red for active state */
+        }
+        .form-group textarea {
+            height: 120px;
+        }
+        .personal-info, .education-background, .workshop-preferences, .experience-skills, .additional-info, .agreement {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #fafafa; /* Light grey for form sections */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .personal-info label, 
+        .education-background label, 
+        .workshop-preferences label, 
+        .experience-skills label, 
+        .additional-info label, 
+        .agreement label {
+            color: #333;
+        }
+        input[type="text"]:focus, 
+        input[type="email"]:focus, 
+        input[type="tel"]:focus, 
+        input[type="date"]:focus, 
+        select:focus {
+            border-color: #0044cc; /* Blue border on focus */
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 68, 204, 0.2);
+        }
+        @media (max-width: 768px) {
+            form {
+                padding: 15px;
+            }
+            .form-group button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            textarea {
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Rental Application Form</h1>
+    <form action="/submit" method="post">
+        <div class="form-group">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+
+        <div class="form-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+        </div>
+
+        <div class="form-group">
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="Male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+            <input type="radio" id="preferNotToSay" name="gender" value="Prefer not to say">
+            <label for="preferNotToSay">Prefer not to say</label>
+            <input type="radio" id="other" name="gender" value="Other">
+            <label for="other">Other:</label>
+            <input type="text" id="otherGender" name="otherGender">
+        </div>
+
+        <div class="form-group">
+            <label for="spaceType">Type of Space Desired:</label>
+            <select id="spaceType" name="spaceType" required>
+                <option value="Apartment">Classroom</option>
+                <option value="House">Main Class</option>
+                <option value="Office">Main Class+ Stadium "Up to 80" </option>
+                <option value="Garage">Main Class+ Stadium "Up to 120"</option><br>
+
+            </select>
+
+             <option value="Other">Other:</option>
+                <input type="text" id="otherSpaceType" name="otherSpaceType">
+        </div>
+          <div class="form-group">
+            <label for="duration">Preferred workshop duration:</label>
+            <input type="text" id="duration" name="workshopType">
+
+        <div class="form-group">
+            <label for="timeOfDay">Preferred time of day for the workshop:</label>
+            <select id="timeOfDay" name="timeOfDay">
+                <option value="morning">Morning</option>
+                <option value="afternoon">Afternoon</option>
+                <option value="evening">Evening</option>
+            </select>
+        </div>
+
+        </div>
+        <div class="form-group">
+            <label for="workshopType">What type of workshop are you interested in?</label>
+            <input type="text" id="workshopType" name="workshopType">
+        </div>
+
+        <div class="form-group">
+            <label for="moveInDate">Desired WorkShop Date:</label>
+            <input type="date" id="moveInDate" name="moveInDate" required>
+        </div>
+
+         <div class="form-group">
+            <label for="equipment">What type of equipment or facilities do you need?</label>
+            <input type="text" id="equipment" name="equipment">
+        </div>
+
+
+        <div class="form-group">
+            <label for="numOccupants">Number of Participant:</label>
+            <input type="text" id="numOccupants" name="numOccupants" required>
+        </div>
+
+        <div class="form-group">
+            <label>Current Employment Status:</label>
+            <input type="radio" id="employed" name="employmentStatus" value="Employed">            <label for="employed">Employed</label>
+            <input type="radio" id="selfEmployed" name="employmentStatus" value="Self-Employed"><label for="selfEmployed">Self-Employed</label>
+            <input type="radio" id="student" name="employmentStatus" value="Student"><label for="student">Student</label>
+            <input type="radio" id="unemployed" name="employmentStatus" value="Unemployed"><label for="unemployed">Unemployed</label>
+            <input type="radio" id="retired" name="employmentStatus" value="Retired"><label for="retired">Retired</label>
+             <input type="radio" id="otherEmployment" name="employmentStatus" value="Other">
+<label for="otherEmployment">Other:</label>
+            <input type="text" id="otherEmploymentStatus" name="otherEmploymentStatus">
+
+        </div>
+                   
+
+        <div class="form-group">
+            <label for="jobTitle">Workshop Title:</label>
+            <input type="text" id="jobTitle" name="jobTitle">
+        </div>
+
+    
+
+        <div class="form-group">
+            <label for="personalReference">Personal Reference (Name and Contact Information):</label>
+            <input type="text" id="personalReference" name="personalReference">
+        </div>
+
+        <div class="form-group">
+            <label for="professionalReference">Professional Reference (Name and Contact Information):</label>
+            <input type="text" id="professionalReference" name="professionalReference">
+        </div>
+
+
+        <div class="form-group">
+            <label for="specialRequirements">Do you have any special requirements or accommodations?</label>
+            <textarea id="specialRequirements" name="specialRequirements"></textarea>
+        </div>
+
+
+        <div class="form-group">
+            <label for="comments">Any other comments or questions?</label>
+            <textarea id="comments" name="comments"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="agreement">I certify that the information provided is true and accurate to the best of my knowledge.</label>
+            <input type="checkbox" id="agreement" name="agreement" required>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Submit Application</button>
+        </div>
+    </form>
+
+    <script>
+        document.getElementById('evictedYes').addEventListener('change', function() {
+            document.getElementById('evictionExplanation').style.display = 'block';
+        });
+        document.getElementById('evictedNo').addEventListener('change', function() {
+            document.getElementById('evictionExplanation').style.display = 'none';
+        });
+        document.getElementById('petsYes').addEventListener('change', function() {
+            document.getElementById('petDetails').style.display = 'block';
+        });
+        document.getElementById('petsNo').addEventListener('change', function() {
+            document.getElementById('petDetails').style.display = 'none';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studying Workshop Application Form</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: linear-gradient(to right, #ffffff, #f9f9f9);
+        }
+        h1, h2, h3 {
+            color: #0044cc; /* Blue color for headings */
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        form {
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+        .form-group input[type="text"], 
+        .form-group input[type="email"], 
+        .form-group input[type="tel"], 
+        .form-group input[type="date"], 
+        .form-group select, 
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .form-group input[type="radio"], 
+        .form-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+        .form-group button {
+            padding: 12px 25px;
+            background-color: #cc0000; /* Red color for buttons */
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .form-group button:hover {
+            background-color: #990000; /* Darker red for hover effect */
+            transform: scale(1.05);
+        }
+        .form-group button:active {
+            background-color: #660000; /* Even darker red for active state */
+        }
+        .form-group textarea {
+            height: 120px;
+        }
+        .personal-info, .education-background, .workshop-preferences, .experience-skills, .additional-info, .agreement {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #fafafa; /* Light grey for form sections */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .personal-info label, 
+        .education-background label, 
+        .workshop-preferences label, 
+        .experience-skills label, 
+        .additional-info label, 
+        .agreement label {
+            color: #333;
+        }
+        input[type="text"]:focus, 
+        input[type="email"]:focus, 
+        input[type="tel"]:focus, 
+        input[type="date"]:focus, 
+        select:focus {
+            border-color: #0044cc; /* Blue border on focus */
+            outline: none;
+            box-shadow: 0 0 8px rgba(0, 68, 204, 0.2);
+        }
+        @media (max-width: 768px) {
+            form {
+                padding: 15px;
+            }
+            .form-group button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            textarea {
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Let's Get Started on Your Study Journey!</h1>
+    <form action="/submit" method="post">
+        <!-- Personal Information Section -->
+        <div class="form-group">
+            <label for="fullName">What’s your name?</label>
+            <input type="text" id="fullName" name="fullName" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">What's your email address?</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">How can we reach you by phone?</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+
+        <div class="form-group">
+            <label for="age">How old are you?</label>
+            <input type="text" id="age" name="age" required>
+        </div>
+
+        <div class="form-group">
+            <label>Which gender do you identify with?</label>
+            <input type="radio" id="male" name="gender" value="Male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female">
+            <label for="female">Female</label>
+            <input type="radio" id="preferNotToSay" name="gender" value="Prefer not to say">
+            <label for="preferNotToSay">Prefer not to say</label>
+        </div>
+
+        <!-- Educational Background Section -->
+        <label for="level">Please select your current level:</label>
+        <select id="level" name="level">
+            <option value="highschool">High/Middle School Student</option>
+            <option value="university">University Student</option>
+            <option value="professional">Professional</option>
+            <label for="otherLevel">Other:</label>
+            <input type="text" id="otherlevel" name="otherLevel">
+
+        </select>
+
+        <div class="form-group">
+            <label for="fieldOfStudy">What did you study or are currently studying?</label>
+            <input type="text" id="fieldOfStudy" name="fieldOfStudy" required>
+        </div>
+
+        <div class="form-group">
+            <label for="currentOccupation">What’s your current job or profession?</label>
+            <input type="text" id="currentOccupation" name="currentOccupation" required>
+        </div>
+
+        <!-- Workshop Preferences Section -->
+        <div class="form-group">
+            <label for="workshopTopic">What’s the workshop topic or title you’re excited about?</label>
+            <input type="text" id="workshopTopic" name="workshopTopic" required>
+        </div>
+
+        <div class="form-group">
+            <label for="preferredDates">When would you like to attend?</label>
+            <input type="text" id="preferredDates" name="preferredDates">
+        </div>
+
+        <div class="form-group">
+            <label>What times work best for you?</label>
+            <input type="radio" id="morning" name="preferredTimes" value="Morning">
+            <label for="morning">Morning</label>
+            <input type="radio" id="afternoon" name="preferredTimes" value="Afternoon">
+            <label for="afternoon">Afternoon</label>
+            <input type="radio" id="evening" name="preferredTimes" value="Evening">
+            <label for="evening">Evening</label>
+        </div>
+
+        <!-- Experience and Skills Section -->
+        <div class="form-group">
+            <label for="priorExperience">Do you have any experience related to this topic? If so, tell us about it!</label>
+            <textarea id="priorExperience" name="priorExperience" rows="4"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="skillsToGain">What specific skills or knowledge do you hope to gain from this workshop?</label>
+            <textarea id="skillsToGain" name="skillsToGain" rows="4" required></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="currentProjects">Are you working on any related projects right now? If yes, share some details!</label>
+            <textarea id="currentProjects" name="currentProjects" rows="4"></textarea>
+        </div>
+
+        <!-- Additional Information Section -->
+        <div class="form-group">
+            <label for="discoveryMethod">How did you find out about this workshop?</label>
+            <select id="discoveryMethod" name="discoveryMethod" required>
+                <option value="Social Media">Social Media</option>
+                <option value="Email Newsletter">Email Newsletter</option>
+                <option value="Word of Mouth">Word of Mouth</option>
+                <option value="Website">Website</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="specialRequirements">Do you have any special requirements or accommodations we should know about?</label>
+            <textarea id="specialRequirements" name="specialRequirements" rows="4"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="dietaryRestrictions">If the workshop is in-person, do you have any dietary restrictions?</label>
+            <textarea id="dietaryRestrictions" name="dietaryRestrictions" rows="4"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="additionalComments">Any other comments or questions for us?</label>
+            <textarea id="additionalComments" name="additionalComments" rows="4"></textarea>
+        </div>
+
+        <!-- Agreement Section -->
+        <div class="form-group">
+            <label for="agreement">I’m excited to join the workshop and agree to the terms and conditions.</label>
+            <input type="checkbox" id="agreement" name="agreement" required>
+            <label for="agreement">Yes, I agree!</label>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Submit Application</button>
+        </div>
+    </form>
+</body>
+</html>
