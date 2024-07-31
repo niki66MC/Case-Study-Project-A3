@@ -1,8 +1,7 @@
 from flask import Flask, render_template, url_for, redirect, request
 from flask import session as login_session
 import pyrebase
-
-
+import math
  
 app = Flask(__name__, template_folder='template', static_folder='assets')
 
@@ -69,14 +68,14 @@ def starterpage():
       ppl = int(request.form["ppl"])
       hours = int(request.form["hours"])
       estimate = 0
-      if ppl < 20:
-        estimate = 5*ppl + (hours - hours%3)*150
-      elif ppl > 20 and ppl < 50:
-        estimate = 5*ppl + (hours - hours%3)*200
-      elif ppl > 50 and ppl < 80:
-        estimate = 5*ppl + (hours - hours%3)*300
-      elif ppl > 80 and ppl < 120:
-        estimate = 5*ppl + (hours - hours%3)*300
+      if ppl < 21:
+        estimate = 5*ppl + ((hours+(3-hours%3)%3)/3)*150
+      elif ppl > 20 and ppl < 51:
+        estimate = 5*ppl + ((hours+(3-hours%3)%3)/3)*200
+      elif ppl > 50 and ppl < 81:
+        estimate = 5*ppl + ((hours+(3-hours%3)%3)/3)*300
+      elif ppl > 80 and ppl < 121:
+        estimate = 5*ppl + ((hours+(3-hours%3)%3)/3)*300
 
       return render_template("starterpage.html",estimate = estimate)
   else:
