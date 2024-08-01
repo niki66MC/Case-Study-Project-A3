@@ -82,6 +82,12 @@ def starterpage():
     return render_template("starterpage.html",estimate = 0)
 
 
+@app.route('/signup', methods = ["POST","GET"])
+def signup():
+  if request.method == "POST":  
+      return render_template("thanks_lill!.html")
+  else:
+    return render_template("signup.html")
 
 @app.route('/rent', methods=['GET', 'POST'])
 def rent():
@@ -91,9 +97,6 @@ def rent():
 def study():
   return render_template("study.html")
 
-@app.route('/signup',methods=['POST','GET'])
-def signup():
-  return render_template("signup.html")
 
 @app.route('/submit',methods=['POST'])
 def submit():
